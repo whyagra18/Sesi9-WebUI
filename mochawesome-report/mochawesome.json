@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-25T09:42:27.604Z",
+    "end": "2026-06-25T09:42:35.534Z",
+    "duration": 7930,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dbb7db61-0e7c-4c20-9674-ad63b41cf915",
+      "title": "",
+      "fullFile": "C:\\Users\\ASUS\\OneDrive\\Dokumen\\Sertifikasi QA\\Sesi9-WebUI\\test\\saucedemo.test.js",
+      "file": "\\test\\saucedemo.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "de5514b7-1143-4f61-9b1e-c7ac654b24af",
+          "title": "SauceDemo Automation",
+          "fullFile": "C:\\Users\\ASUS\\OneDrive\\Dokumen\\Sertifikasi QA\\Sesi9-WebUI\\test\\saucedemo.test.js",
+          "file": "\\test\\saucedemo.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"SauceDemo Automation\"",
+              "fullTitle": "SauceDemo Automation \"before all\" hook in \"SauceDemo Automation\"",
+              "timedOut": false,
+              "duration": 3217,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser(\"chrome\").build();",
+              "err": {},
+              "uuid": "3da46020-000c-47c2-851e-c50b6b9974a0",
+              "parentUUID": "de5514b7-1143-4f61-9b1e-c7ac654b24af",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"SauceDemo Automation\"",
+              "fullTitle": "SauceDemo Automation \"after all\" hook in \"SauceDemo Automation\"",
+              "timedOut": false,
+              "duration": 256,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "cb053db0-202c-4ae0-b8ce-4b9314c30a0c",
+              "parentUUID": "de5514b7-1143-4f61-9b1e-c7ac654b24af",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Success Login",
+              "fullTitle": "SauceDemo Automation Success Login",
+              "timedOut": false,
+              "duration": 3014,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get(\"https://www.saucedemo.com/\");\n        await driver.findElement(By.id(\"user-name\"))\n            .sendKeys(\"standard_user\");\n        await driver.findElement(By.id(\"password\"))\n            .sendKeys(\"secret_sauce\");\n        await driver.findElement(By.id(\"login-button\"))\n            .click();\n        const currentUrl = await driver.getCurrentUrl();\n        assert.strictEqual(\n            currentUrl,\n            \"https://www.saucedemo.com/inventory.html\"\n        );",
+              "err": {},
+              "uuid": "0c4e5daf-a450-4959-ad79-fbe7ad3892ba",
+              "parentUUID": "de5514b7-1143-4f61-9b1e-c7ac654b24af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Sort Product A-Z",
+              "fullTitle": "SauceDemo Automation Sort Product A-Z",
+              "timedOut": false,
+              "duration": 1421,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get(\"https://www.saucedemo.com/\");\n    await driver.findElement(By.id(\"user-name\"))\n        .sendKeys(\"standard_user\");\n    await driver.findElement(By.id(\"password\"))\n        .sendKeys(\"secret_sauce\");\n    await driver.findElement(By.id(\"login-button\"))\n        .click();\n    const dropdown =\n        await driver.findElement(\n            By.className(\"product_sort_container\")\n        );\nawait dropdown.click();\nawait dropdown.sendKeys(\"Name (Z to A)\");\nawait dropdown.sendKeys(\"Name (A to Z)\");\n    const products =\n        await driver.findElements(\n            By.className(\"inventory_item_name\")\n        );\n    const firstProduct =\n        await products[0].getText();\n    console.log(firstProduct);\n    assert.strictEqual(\n        firstProduct,\n        \"Sauce Labs Backpack\"\n    );",
+              "err": {},
+              "uuid": "04cf663d-dcb6-4b89-ae66-77a29d0ccd39",
+              "parentUUID": "de5514b7-1143-4f61-9b1e-c7ac654b24af",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0c4e5daf-a450-4959-ad79-fbe7ad3892ba",
+            "04cf663d-dcb6-4b89-ae66-77a29d0ccd39"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4435,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.6"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
