@@ -8,11 +8,11 @@ describe("SauceDemo Automation", function () {
 
     let driver;
 
-    before(async () => {
+    beforeEach(async () => {
         driver = await new Builder().forBrowser("chrome").build();
     });
 
-    after(async () => {
+    afterEach(async () => {
         await driver.quit();
     });
 
